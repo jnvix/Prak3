@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane id="BorderPane" fx:id="borderPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jojo.controller.LayoutController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#mnShowManagementSupplier" text="Show Management Supplier" />
+                  <MenuItem mnemonicParsing="false" onAction="#mnClose" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#mnAbout" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane prefHeight="150.0" prefWidth="442.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="86.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="358.0" minWidth="10.0" prefWidth="356.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="ID" />
+                  <Label text="Name" GridPane.rowIndex="1" />
+                  <Label text="Supplier" GridPane.rowIndex="2" />
+                  <TextField fx:id="txtId" prefHeight="25.0" prefWidth="216.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="comboSupp" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <TableView fx:id="tableData" layoutY="150.0" prefHeight="226.0" prefWidth="600.0">
+              <columns>
+                <TableColumn fx:id="colId" prefWidth="199.0" text="ID" />
+                <TableColumn fx:id="colName" prefWidth="197.0" text="Name" />
+                  <TableColumn fx:id="colSupp" prefWidth="203.0" text="Supplier" />
+              </columns>
+            </TableView>
+            <Button fx:id="btnSave" layoutX="416.0" layoutY="118.0" mnemonicParsing="false" onAction="#btnSaveOnClicked" text="Save" />
+            <Button fx:id="btnReset" layoutX="471.0" layoutY="118.0" mnemonicParsing="false" onAction="#btnResetOnClicked" text="Reset" />
+            <Button fx:id="btnUpdate" disable="true" layoutX="531.0" layoutY="118.0" mnemonicParsing="false" onAction="#btnUpdateOnClicked" text="Update" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
